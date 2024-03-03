@@ -1,0 +1,34 @@
+.container {
+  width: 100vw;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  --main-clr: #f93;
+  --main-clr-light: rgb(255, 162, 70);
+  --bg-clr: #1f1f1f;
+  --bg-clr-dim: #1f1f1fce;
+  --bg-clr-dark: #181818;
+  --text-clr: #aaa;
+  background-color: #0f0f12;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: inter !important;
+}
+
+
+.bodySection {
+  display: flex;
+  flex-grow: 1;
+}
+
+.mainSection {
+  padding: 20px;
+  flex-grow: 1;
+  box-shadow: 0 0 0 3px var(--main-clr);
+  margin: 20px;
+  border-radius: .2rem;
+}

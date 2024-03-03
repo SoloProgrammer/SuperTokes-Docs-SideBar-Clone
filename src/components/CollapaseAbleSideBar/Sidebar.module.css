@@ -1,0 +1,152 @@
+.container {
+    max-width: 335px;
+    border-right: 1px solid rgba(255, 255, 255, .2);
+    position: sticky;
+    right: 0;
+    top: 0;
+    background: var(--bg-clr);
+    flex: 4;
+    max-height: 91.2dvh;
+    overflow: auto;
+}
+
+.container::-webkit-scrollbar {
+    width: .45rem;
+}
+
+.container::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: rgba(255, 255, 255, .5);
+}
+
+.box {
+    border: 1px solid var(--main-clr);
+    box-shadow: rgba(255, 153, 51, 0.5) 0px 0px 8px;
+    border-radius: 1rem;
+    padding: 10px 17px 18px 17px;
+    margin: 10px;
+    margin-top: 30px;
+}
+
+.box button {
+    border: none;
+    padding: 3px 8px;
+    border-radius: 15px;
+    background: linear-gradient(90.08deg, rgb(237, 142, 47) -0.59%, rgb(181, 68, 20) 99.94%);
+    color: white;
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 16px;
+}
+
+.items {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.items p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.withIcon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+.menuList {
+    margin-top: 10px;
+    display: flex;
+    gap: 14px;
+    flex-direction: column;
+}
+
+.menuList.childrensList {
+    gap: 5px !important;
+}
+
+.menuList.children {
+    margin-top: 0px !important;
+}
+
+.menuItem {
+    list-style: none;
+}
+
+.menuContent {
+    padding: 0;
+}
+
+.menuContent {
+    display: inline-block;
+    width: 100%;
+    user-select: none;
+    padding-left: calc(var(--pLeft) * 1px);
+}
+
+.content {
+    width: 100%;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    transition: transform .2s;
+}
+
+.icon.active {
+    transform: rotate(90deg);
+}
+
+.menuItem .menuContent {
+    color: var(--text-clr) !important;
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: .2s background;
+}
+
+.menuContent.children {
+    color: whitesmoke !important;
+    text-transform: none;
+    font-size: .85rem !important;
+}
+
+.menuContent:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, .079)
+}
+
+.nestedListWrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: .2s all;
+}
+
+.nestedListWrapper.collapsed {
+    grid-template-rows: 0fr;
+}
+
+.nestedListWrapper .childrens {
+    overflow: hidden;
+}
