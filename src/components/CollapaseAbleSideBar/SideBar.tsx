@@ -97,7 +97,7 @@ const MenuItem = ({
           <span className={styles.withIcon}>
             {name}
             {icon && <img src={icon} alt={name} width={18} />}
-            {name === "Integrations" && icons?.length && (
+            {icons?.length && (
               <>
                 {icons.map((icon) => (
                   <img src={icon.src} alt="" width={icon.w} />
