@@ -1,18 +1,6 @@
 import { ReactNode, createContext, useContext } from "react";
 import { tabs } from "../data";
-
-export interface Tab {
-  name: string;
-  icon?: string;
-  id: string;
-  isChildren: boolean;
-  parentId: string;
-  slug: string;
-  ["data-depth"]: number;
-}
-export type SideBarContextType = {
-  getMenuItems: (id: string) => Tab[];
-};
+import { SideBarContextType } from "../types/types";
 
 export const SideBarContext = createContext<SideBarContextType | null>(null);
 

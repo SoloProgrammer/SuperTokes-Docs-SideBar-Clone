@@ -8,6 +8,28 @@ export const tabs = [
   {
     id: "12345",
     name: "Integrations",
+    icons: [
+      {
+        src: "https://supertokens.com/img/logos/hasura-logo.png",
+        w: 18,
+      },
+      {
+        src: "https://supertokens.com/img/logos/graphql-logo.png",
+        w: 18,
+      },
+      {
+        src: "https://supertokens.com/img/logos/next-logo.png",
+        w: 18,
+      },
+      {
+        src: "https://supertokens.com/img/logos/nest-logo.svg",
+        w: 18,
+      },
+      {
+        src: "https://supertokens.com/img/logos/aws-lambda.svg",
+        w: 25,
+      },
+    ],
     slug: "integrations",
     isChildren: false,
   },

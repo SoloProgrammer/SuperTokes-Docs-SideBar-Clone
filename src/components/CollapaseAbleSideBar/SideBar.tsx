@@ -1,8 +1,9 @@
 import { IoIosArrowForward } from "react-icons/io";
-import { Tab, useSideBarData } from "../../context/SideBarProvider";
+import { useSideBarData } from "../../context/SideBarProvider";
 import styles from "./Sidebar.module.css";
 import { CSSProperties, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IMenuList, Tab } from "../../types/types";
 
 const SideBar = () => {
   const { getMenuItems } = useSideBarData();
@@ -37,11 +38,6 @@ const SideBar = () => {
   );
 };
 
-interface IMenuList {
-  menuItems: Tab[];
-  ["data-depth"]: number;
-}
-
 const MenuList = ({ menuItems, "data-depth": dataDepth }: IMenuList) => {
   return (
     <ul
@@ -63,7 +59,7 @@ const MenuItem = ({
   item: Tab;
   ["data-depth"]: number;
 }) => {
-  const { id, name, isChildren, slug, icon } = item;
+  const { id, name, isChildren, slug, icon, icons } = item;
   const { getMenuItems } = useSideBarData();
   function hasChildrens() {
     return getMenuItems(id)?.length > 0;
@@ -101,33 +97,11 @@ const MenuItem = ({
           <span className={styles.withIcon}>
             {name}
             {icon && <img src={icon} alt={name} width={18} />}
-            {name === "Integrations" && (
+            {name === "Integrations" && icons?.length && (
               <>
-                <img
-                  src="https://supertokens.com/img/logos/hasura-logo.png"
-                  alt=""
-                  width={18}
-                />
-                <img
-                  src="https://supertokens.com/img/logos/graphql-logo.png"
-                  alt=""
-                  width={18}
-                />
-                <img
-                  src="https://supertokens.com/img/logos/next-logo.png"
-                  alt=""
-                  width={18}
-                />
-                <img
-                  src="https://supertokens.com/img/logos/nest-logo.svg"
-                  alt=""
-                  width={18}
-                />
-                <img
-                  src="https://supertokens.com/img/logos/aws-lambda.svg"
-                  alt=""
-                  width={25}
-                />
+                {icons.map((icon) => (
+                  <img src={icon.src} alt="" width={icon.w} />
+                ))}
               </>
             )}
           </span>
