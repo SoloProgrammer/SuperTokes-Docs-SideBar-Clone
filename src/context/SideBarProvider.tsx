@@ -5,7 +5,7 @@ import { SideBarContextType } from "../types/types";
 export const SideBarContext = createContext<SideBarContextType | null>(null);
 
 export const SideBarProvider = ({ children }: { children: ReactNode }) => {
-  function strutureTabs() {
+  function createMenuListItems() {
     let obj: { [key: string]: any } = {};
     tabs.forEach((tab) => {
       obj[tab.parentId ?? "root"] ||= [];
@@ -15,8 +15,9 @@ export const SideBarProvider = ({ children }: { children: ReactNode }) => {
   }
 
   const getMenuItems = (parentId: string) => {
-    return strutureTabs()[parentId];
+    return createMenuListItems()[parentId];
   };
+  
   return (
     <SideBarContext.Provider value={{ getMenuItems }}>
       {children}
